@@ -1,0 +1,19 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+.background {
+  @apply bg-[url('Pictures/background.jpeg')] bg-repeat 
+}
+.scene {
+  perspective: 400px;
+}
+.custom-rotate-yz {
+transform-style: preserve-3d;
+  transform: rotateY(180deg) rotateZ(185deg) translateX(1px) translateY(-6px);
+}
+.custom-rotate-y {
+transform-style: preserve-3d;
+  transform: rotateY(180deg) rotateZ(40deg) translateX(0px) translateY(-1px);
+}
+
