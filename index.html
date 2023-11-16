@@ -1,5 +1,6 @@
 <!-DOCTYPE>
-<html lang="en"><head>
+<html lang="en">
+  <head>
    
     
     <meta charset="UTF-8">
@@ -31,7 +32,7 @@
   <div  class="relative">
   <div id="blur" class="background absolute h-full w-full top-0 left-0 "></div>
     <div id="content"class="relative z-10 ">
-    <nav class="">
+    <nav class="" id="nav">
         <div class="fixed flex justify-around pt-1 w-screen background z-20">
       
 <span id="menu" class="icon-[heroicons-outline--menu-alt-1] w-10 h-10 text-white"></span>
@@ -113,10 +114,10 @@
       <hr class="-mt-1"/>
       
     </div>
-     <div class="bg-black/25 flex flex-col text-white gap-x-4 w-[95vw]  py-4 rounded-xl mt-8">
+     <div class="bg-black/25 flex flex-col text-white gap-x-4 w-[95vw]  py-4 rounded-xl mt-8" id="initial">
        <div id="hourData" class="flex mx-auto w-[85vw] justify-around">
          <div class="flex flex-col ">
-         <p >7 pm</p>
+         <p class="text-xs">7 pm</p>
          <span class=" icon-[line-md--moon-filled-alt-to-sunny-filled-loop-transition] h-8 w-8 bg-white"></span>
          <p class="text-white/75">49%</p>
          <p >79°</p>
@@ -148,12 +149,75 @@
        </div>
        <hr class=" mt-2"/>
        <div class="flex justify-center  pt-2">
-         <p class="text-base mr-2">see more</p>
+         <p class="text-base mr-2 " id="seemore">see more</p>
          <span class="icon-[iconamoon--arrow-right-2-light] h-6 w-6 "></span>
        </div>
      </div>
-     <div class="bg-black/25 flex flex-col text-white gap-x-4 w-[95vw]  py-4 rounded-xl mt-8">
-       <div id="hourData2" class="flex flex-col mx-auto w-[85vw] justify-around">
+     <div class="bg-black/25 flex flex-col text-white gap-x-4 w-[100vw]  py-4 rounded-xl hidden absolute -top-4 left-0" id="product">
+    <nav class="">
+        <div class="fixed flex justify-between pt-1 w-screen background z-20 py-1 px-5 ">
+      
+
+<!-- location name -->
+    <div class=" flex mt-1 gap-x-4">
+<span  id="seeless" class="icon-[formkit--arrowleft] w-6 h-6 pt-1 text-white"></span>
+<p id="timezone" class="text-slate-50 text-xl">
+  Mgbaukwu
+</p>
+
+</div>
+<!-- end of location name -->
+<!-- share search part of nav bar -->
+   <div class="flex justify-between mt-1 ">
+<span class="icon-[gridicons--notice-outline] w-6 h-6 text-white "></span>
+<span class="icon-[iconamoon--menu-kebab-vertical-fill] w-6 h-6 text-white ml-4"></span>
+</div>
+<!-- end of share search part of nav bar -->
+    </div>
+<div id="dmenu" class="bg-slate-100 h-screen w-[90vw] fixed top-0 left-0 shift z-50 hidden flex flex-col gap-y-6  ">
+  <h3 class="mt-10 ml-12">WEATHER</h3>
+  <ul class="flex flex-col gap-y-6 ml-4">
+    <li class="flex">
+<span class="icon-[akar-icons--location] w-6 h-6  mr-2"></span>
+<p >Manage Location</p>
+    </li>
+    <li class="flex">
+<span class="icon-[fluent--settings-24-regular] h-6 w-6 mr-2"></span>
+<p >Settings</p>
+    </li>
+    <li class="flex">
+      <span class="  icon-[solar--ruler-pen-linear] w-6 h-6 mr-2 "></span>
+      <p >units</p>
+    </li>
+    <li class="flex">
+      <span class=" icon-[bx--customize] w-6 h-6 mr-2"></span>
+      <p >Customize</p>
+    </li>
+    <li class="flex">
+      <span class=" icon-[fe--info] w-6 h-6 mr-2"></span>
+      <p >icon description</p>
+    </li>
+    <hr />
+    <li class="flex">
+      <span class="icon-[openmoji--regional-indicator-v] w-6 h-6 mr-2"></span>
+      <p >weather premium</p>
+    </li>
+    <li class="flex ">
+      <span class="icon-[fluent--star-checkmark-20-regular] w-6 h-6  stroke-black  mr-2"></span>
+      <p >Rate me</p>
+    </li>
+    <li class="flex">
+      <span class="icon-[wpf--message-outline] w-6 h-6 mr-2"></span>
+      <p >Feedback and suggestions</p>
+    </li>
+    <li class="flex">
+      <span class="icon-[mingcute--document-3-line] w-6 h-6 mr-2"></span>
+      <p >Privacy policy</p>
+    </li>
+  </ul>
+</div>
+</nav>
+       <div id="hourData2" class="flex flex-col mx-auto w-[85vw] justify-around ">
          <div class="flex flex-col ">
          <p >7 pm</p>
          <span class=" icon-[line-md--moon-filled-alt-to-sunny-filled-loop-transition] h-8 w-8 bg-white"></span>
@@ -433,5 +497,6 @@
   </div>
 </div>
 </body>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.9.1/gsap.min.js"></script>
 <script src="main.js"></script>
 </html>

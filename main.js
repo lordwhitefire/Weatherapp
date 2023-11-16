@@ -241,10 +241,10 @@ for (let i = 0; i < data.days.length; i++) {
 const cleanIcon = icon.replace(/\s+/g, ''); // Remove spaces from the icon value
 
       hourDiv.innerHTML = `
-        <p>${j} : 00</p>
-  <img src="SVG/four/${cleanIcon}.svg" class="h-10 w-10" />
-        <p class="text-white/75">${windgust}mph</p>
-        <p class=" mt-1">${temp}°</p>
+        <p class="text-xs">${j} : 00</p>
+  <img src="SVG/four/${cleanIcon}.svg" class="h-8 w-8" />
+        <p class="text-white/75 text-xs">${windgust}mph</p>
+        <p class="text-xs mt-1">${temp}°</p>
       `;
 
       hourlyDataDiv.appendChild(hourDiv);
@@ -281,6 +281,52 @@ const cleanIcon = icon.replace(/\s+/g, ''); // Remove spaces from the icon value
   getUserLocation();
   }
   initializeWeatherApp();
+});
+
+
+// for the see more button 
+document.getElementById("seemore").addEventListener("click", function() {
+    var initialContent = document.getElementById("initial");
+    var productContent = document.getElementById("product");
+    var seeLessButton = document.getElementById("nav");
+
+    initialContent.style.display = "none";
+    productContent.style.display = "block";
+    seeLessButton.style.display = "none";
+});
+
+
+// for the see less button
+document.getElementById("seeless").addEventListener("click", function() {
+    var initialContent = document.getElementById("initial");
+    var productContent = document.getElementById("product");
+    var seeLessButton = document.getElementById("nav");
+
+    initialContent.style.display = "block";
+    productContent.style.display = "none";
+    seeLessButton.style.display = "block";
+});
+
+// For the See More button
+document.getElementById("seemore").addEventListener("click", function() {
+    var initialContent = document.getElementById("initial");
+    var productContent = document.getElementById("product");
+
+    gsap.to(initialContent, { duration: 0.8, opacity: 0, display: 'none' }); // Fade out and disappear initial content
+
+    gsap.fromTo(productContent, { y: productContent.offsetHeight, opacity: 0, display: 'block' }, 
+        { duration: 0.8, y: 0, opacity: 1 }); // Slide up product content and make it visible
+});
+
+// For the See Less button
+document.getElementById("seeless").addEventListener("click", function() {
+    var initialContent = document.getElementById("initial");
+    var productContent = document.getElementById("product");
+
+    gsap.to(initialContent, { duration: 0.8, opacity: 1, display: 'block' }); // Fade in initial content
+
+    gsap.fromTo(productContent, { y: 0, opacity: 1, display: 'block' }, 
+        { duration: 0.8, y:300, opacity: 0, display: 'none' }); // Slide down and fade out product content
 });
 
 
